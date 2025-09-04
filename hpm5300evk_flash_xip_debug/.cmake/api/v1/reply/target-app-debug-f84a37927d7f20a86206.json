@@ -1,0 +1,488 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "CMakeFiles/app.dir/./src/main.c.obj"
+		}
+	],
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"find_package",
+			"target_link_libraries",
+			"target_sources",
+			"sdk_app_src"
+		],
+		"files" : 
+		[
+			"hpm_sdk_localized_for_hpm5300evk/cmake/application.cmake",
+			"C:/Users/26355/Downloads/sdk_env-1.7.0/hpm_sdk/cmake/hpm-sdk-config.cmake",
+			"CMakeLists.txt",
+			"hpm_sdk_localized_for_hpm5300evk/cmake/cmake-ext.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 11,
+				"parent" : 2
+			},
+			{
+				"file" : 0,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 300,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 55,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 341,
+				"parent" : 7
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wundef"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wno-format"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-fno-builtin"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-mabi=ilp32f"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-march=rv32imafc_zifencei_zba_zbb_zbc_zbs"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 6,
+					"define" : "CONFIG_USB_CHANNEL=1"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "FLASH_XIP=1"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_ACMP=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_ADC16=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_CRC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_DAC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_DMAMUX=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_DMAV2=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_EWDG=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_GPIO=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_GPIOM=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_GPTMR=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_I2C=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_IOC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_KEYM=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_MBX=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_MCAN=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_MCHTMR=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_MMC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_MON=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_OPAMP=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_OTP=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PCFG=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PDGO=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PGPR=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PLB=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PLIC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PLICSW=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PLLCTLV2=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PMP=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PPOR=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PTPC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_PWM=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_QEIV2=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_QEO=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_RDC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_RNG=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_SDP=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_SEC=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_SEI=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_SPI=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_SYNT=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_SYSCTL=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_TRGM=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_TSNS=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_UART=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPMSOC_HAS_HPMSDK_USB=y"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "HPM_EN_MATH_DSP_LIB=1"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/arch/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/boards/hpm5300evk/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/ip"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/toolchains"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/boot"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/drivers/inc"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/utils/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/components/debug_console/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/components/usb/device/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/hpm_math/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/hpm_math/nds_dsp"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/common"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/osal"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/core"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/cdc"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/hid"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/midi"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/msc"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/audio"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/video"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/hub"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/wireless"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/port/ehci"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm5300evk_flash_xip_debug/build_tmp/generated/include"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/inc"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/inc/config"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/components/enet_phy/."
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/middleware/hpm_monitor/core"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/middleware/hpm_monitor/port/hpm"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/middleware/hpm_monitor/port/hpm/barebone_usb"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Users/26355/Downloads/sdk_env-1.7.0/toolchains/rv32imac_zicsr_zifencei_multilib_b_ext-win/riscv32-unknown-elf/include/c++/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "app::@6890427a1f51a3e7e1df",
+	"name" : "app",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 8,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "OBJECT_LIBRARY"
+}

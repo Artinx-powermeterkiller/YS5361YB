@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "hpm_apps/build_tmp/services",
+		"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/services"
+	}
+}

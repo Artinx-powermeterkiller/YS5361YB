@@ -1,0 +1,51 @@
+{
+	"cmake" : 
+	{
+		"generator" : 
+		{
+			"multiConfig" : false,
+			"name" : "Ninja"
+		},
+		"paths" : 
+		{
+			"cmake" : "C:/Users/26355/Downloads/sdk_env-1.7.0/tools/cmake/bin/cmake.exe",
+			"cpack" : "C:/Users/26355/Downloads/sdk_env-1.7.0/tools/cmake/bin/cpack.exe",
+			"ctest" : "C:/Users/26355/Downloads/sdk_env-1.7.0/tools/cmake/bin/ctest.exe",
+			"root" : "C:/Users/26355/Downloads/sdk_env-1.7.0/tools/cmake/share/cmake-3.24"
+		},
+		"version" : 
+		{
+			"isDirty" : false,
+			"major" : 3,
+			"minor" : 24,
+			"patch" : 0,
+			"string" : "3.24.0",
+			"suffix" : ""
+		}
+	},
+	"objects" : 
+	[
+		{
+			"jsonFile" : "codemodel-v2-b7c6f07a40238263dad2.json",
+			"kind" : "codemodel",
+			"version" : 
+			{
+				"major" : 2,
+				"minor" : 4
+			}
+		}
+	],
+	"reply" : 
+	{
+		"codemodel-v2" : 
+		{
+			"jsonFile" : "codemodel-v2-b7c6f07a40238263dad2.json",
+			"kind" : "codemodel",
+			"version" : 
+			{
+				"major" : 2,
+				"minor" : 4
+			}
+		}
+	}
+}

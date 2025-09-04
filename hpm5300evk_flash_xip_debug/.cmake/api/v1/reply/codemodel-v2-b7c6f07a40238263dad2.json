@@ -1,0 +1,496 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						18
+					],
+					"jsonFile" : "directory-.-debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						5,
+						6
+					]
+				},
+				{
+					"build" : "build_tmp",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						7,
+						8,
+						9,
+						12
+					],
+					"jsonFile" : "directory-build_tmp-debug-3d319ba78085b2a07ae6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"build" : "build_tmp/arch",
+					"jsonFile" : "directory-build_tmp.arch-debug-52a8a5db4a59217add8b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/arch"
+				},
+				{
+					"build" : "build_tmp/boards",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-build_tmp.boards-debug-b394bd41eac39711f126.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/boards"
+				},
+				{
+					"build" : "build_tmp/boards/hpm5300evk",
+					"jsonFile" : "directory-build_tmp.boards.hpm5300evk-debug-e29e00097f67cb286a95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/boards/hpm5300evk"
+				},
+				{
+					"build" : "build_tmp/soc",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-build_tmp.soc-debug-84f1fff4da8ce7e565fe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/soc"
+				},
+				{
+					"build" : "build_tmp/soc/HPM5300/HPM5361",
+					"jsonFile" : "directory-build_tmp.soc.HPM5300.HPM5361-debug-704013242aa8a53ffe7c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361"
+				},
+				{
+					"build" : "build_tmp/drivers",
+					"jsonFile" : "directory-build_tmp.drivers-debug-ecf259b112e873139b41.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/drivers"
+				},
+				{
+					"build" : "build_tmp/utils",
+					"jsonFile" : "directory-build_tmp.utils-debug-5b82902c32c8ba45a85c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/utils"
+				},
+				{
+					"build" : "build_tmp/components",
+					"childIndexes" : 
+					[
+						10,
+						11
+					],
+					"jsonFile" : "directory-build_tmp.components-debug-13404f9bee02879501d8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/components"
+				},
+				{
+					"build" : "build_tmp/components/debug_console",
+					"jsonFile" : "directory-build_tmp.components.debug_console-debug-13f6eff88d4299bd09ef.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/components/debug_console"
+				},
+				{
+					"build" : "build_tmp/components/usb/device",
+					"jsonFile" : "directory-build_tmp.components.usb.device-debug-78743c8ee2927e1f2240.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/components/usb/device"
+				},
+				{
+					"build" : "build_tmp/middleware",
+					"childIndexes" : 
+					[
+						13,
+						14,
+						15,
+						16,
+						17
+					],
+					"jsonFile" : "directory-build_tmp.middleware-debug-1ffd852a88fd2472359a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/middleware"
+				},
+				{
+					"build" : "build_tmp/middleware/hpm_math",
+					"jsonFile" : "directory-build_tmp.middleware.hpm_math-debug-c461d6eb532f8d8ec87a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/middleware/hpm_math"
+				},
+				{
+					"build" : "build_tmp/middleware/cherryusb",
+					"jsonFile" : "directory-build_tmp.middleware.cherryusb-debug-d2368e894de74b8317e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb"
+				},
+				{
+					"build" : "build_tmp/middleware/eclipse_threadx",
+					"jsonFile" : "directory-build_tmp.middleware.eclipse_threadx-debug-3282ae3455903acb6d38.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/middleware/eclipse_threadx"
+				},
+				{
+					"build" : "build_tmp/middleware/CMSIS",
+					"jsonFile" : "directory-build_tmp.middleware.CMSIS-debug-57ae583d1e3194f76412.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/middleware/CMSIS"
+				},
+				{
+					"build" : "build_tmp/middleware/ptpd",
+					"jsonFile" : "directory-build_tmp.middleware.ptpd-debug-99b7dcc226e6602da230.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 1,
+					"source" : "hpm_sdk_localized_for_hpm5300evk/middleware/ptpd"
+				},
+				{
+					"build" : "hpm_apps/build_tmp",
+					"childIndexes" : 
+					[
+						19,
+						20,
+						21,
+						23,
+						25,
+						26
+					],
+					"jsonFile" : "directory-hpm_apps.build_tmp-debug-5a00f323f1f33af3f2e9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/apps",
+					"jsonFile" : "directory-hpm_apps.build_tmp.apps-debug-bfbba4c760c7c7ed4d0e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 18,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/boards",
+					"jsonFile" : "directory-hpm_apps.build_tmp.boards-debug-60ff7ff02ca733b4c84a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 18,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/boards"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/components",
+					"childIndexes" : 
+					[
+						22
+					],
+					"jsonFile" : "directory-hpm_apps.build_tmp.components-debug-ce32e583c73593ef2c4a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 18,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/components"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/components/enet_phy",
+					"jsonFile" : "directory-hpm_apps.build_tmp.components.enet_phy-debug-5410608639b9e27c5c1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 21,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/components/enet_phy"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/middleware",
+					"childIndexes" : 
+					[
+						24
+					],
+					"jsonFile" : "directory-hpm_apps.build_tmp.middleware-debug-e96f1f4da6c5fa088670.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 18,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/middleware"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/middleware/hpm_monitor",
+					"jsonFile" : "directory-hpm_apps.build_tmp.middleware.hpm_monitor-debug-bc99fc65e5740a2c5e14.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 23,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/middleware/hpm_monitor"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/services",
+					"jsonFile" : "directory-hpm_apps.build_tmp.services-debug-1db0d107b62443f7de33.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 18,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/services"
+				},
+				{
+					"build" : "hpm_apps/build_tmp/tools",
+					"jsonFile" : "directory-hpm_apps.build_tmp.tools-debug-8d3e570ce9ab650922af.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 18,
+					"projectIndex" : 0,
+					"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/tools"
+				}
+			],
+			"name" : "debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26
+					],
+					"name" : "hpm_monitor_demo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						5,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					],
+					"name" : "hpm_sdk",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-app-debug-f84a37927d7f20a86206.json",
+					"name" : "app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "demo.elf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-demo.elf-debug-5387ef190f924b5698b5.json",
+					"name" : "demo.elf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "distclean::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-distclean-debug-6d65d5f3dc23caf8eebb.json",
+					"name" : "distclean",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "hpm_sdk_gcc_lib::@dd6fcd45be7fd0b23a49",
+					"jsonFile" : "target-hpm_sdk_gcc_lib-debug-bfbd077bfeaff4094023.json",
+					"name" : "hpm_sdk_gcc_lib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "hpm_sdk_lib::@dd6fcd45be7fd0b23a49",
+					"jsonFile" : "target-hpm_sdk_lib-debug-6e30d8298c12588b49c5.json",
+					"name" : "hpm_sdk_lib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "localize_sdk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-localize_sdk-debug-0a51d87d646f554b2b82.json",
+					"name" : "localize_sdk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "unlocalize_sdk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-unlocalize_sdk-debug-21e9997b35d9a61cc280.json",
+					"name" : "unlocalize_sdk",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software/hpm5300evk_flash_xip_debug",
+		"source" : "C:/Users/26355/Downloads/hpm_apps-1.7.0/apps/hpm_monitor/software"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

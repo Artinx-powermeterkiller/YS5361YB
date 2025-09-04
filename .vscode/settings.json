@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "hpm_gpio_drv.h": "c",
+        "pinmux.h": "c",
+        "board.h": "c",
+        "hpm_soc.h": "c",
+        "hpm_soc_feature.h": "c",
+        "bsp_io.h": "c",
+        "bsp_eeprom.h": "c",
+        "bsp_i2c.h": "c",
+        "hpm_mchtmr_drv.h": "c",
+        "bsp_dr16.h": "c",
+        "hpm_uart_drv.h": "c",
+        "hpm_dmamux_drv.h": "c",
+        "emm_v5.h": "c",
+        "hpm_mcan_drv.h": "c",
+        "usbd_cdc_acm.h": "c",
+        "usb_cdc.h": "c"
+    }
+}

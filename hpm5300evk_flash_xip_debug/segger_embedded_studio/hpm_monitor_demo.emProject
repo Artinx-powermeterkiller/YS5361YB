@@ -1,0 +1,543 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="hpm_monitor_demo" target="20" version="2">
+  <configuration
+    Name="Common"
+    c_preprocessor_definitions="FLASH_XIP=1;HPMSOC_HAS_HPMSDK_GPIO=y;HPMSOC_HAS_HPMSDK_PLIC=y;HPMSOC_HAS_HPMSDK_MCHTMR=y;HPMSOC_HAS_HPMSDK_PLICSW=y;HPMSOC_HAS_HPMSDK_GPTMR=y;HPMSOC_HAS_HPMSDK_UART=y;HPMSOC_HAS_HPMSDK_I2C=y;HPMSOC_HAS_HPMSDK_SPI=y;HPMSOC_HAS_HPMSDK_CRC=y;HPMSOC_HAS_HPMSDK_TSNS=y;HPMSOC_HAS_HPMSDK_MBX=y;HPMSOC_HAS_HPMSDK_EWDG=y;HPMSOC_HAS_HPMSDK_DMAMUX=y;HPMSOC_HAS_HPMSDK_DMAV2=y;HPMSOC_HAS_HPMSDK_GPIOM=y;HPMSOC_HAS_HPMSDK_MCAN=y;HPMSOC_HAS_HPMSDK_PTPC=y;HPMSOC_HAS_HPMSDK_QEIV2=y;HPMSOC_HAS_HPMSDK_QEO=y;HPMSOC_HAS_HPMSDK_MMC=y;HPMSOC_HAS_HPMSDK_PWM=y;HPMSOC_HAS_HPMSDK_RDC=y;HPMSOC_HAS_HPMSDK_PLB=y;HPMSOC_HAS_HPMSDK_SYNT=y;HPMSOC_HAS_HPMSDK_SEI=y;HPMSOC_HAS_HPMSDK_TRGM=y;HPMSOC_HAS_HPMSDK_USB=y;HPMSOC_HAS_HPMSDK_SDP=y;HPMSOC_HAS_HPMSDK_SEC=y;HPMSOC_HAS_HPMSDK_MON=y;HPMSOC_HAS_HPMSDK_RNG=y;HPMSOC_HAS_HPMSDK_OTP=y;HPMSOC_HAS_HPMSDK_KEYM=y;HPMSOC_HAS_HPMSDK_ADC16=y;HPMSOC_HAS_HPMSDK_DAC=y;HPMSOC_HAS_HPMSDK_OPAMP=y;HPMSOC_HAS_HPMSDK_ACMP=y;HPMSOC_HAS_HPMSDK_SYSCTL=y;HPMSOC_HAS_HPMSDK_IOC=y;HPMSOC_HAS_HPMSDK_PLLCTLV2=y;HPMSOC_HAS_HPMSDK_PPOR=y;HPMSOC_HAS_HPMSDK_PCFG=y;HPMSOC_HAS_HPMSDK_PGPR=y;HPMSOC_HAS_HPMSDK_PDGO=y;HPMSOC_HAS_HPMSDK_PMP=y;HPM_EN_MATH_DSP_LIB=1;CONFIG_USB_CHANNEL=1;"
+    debug_cpu_registers_file="..\..\hpm_sdk_localized_for_hpm5300evk\soc\HPM5300\HPM5361\hpm_ses_riscv_cpu_regs.xml"
+    debug_register_definition_file="..\..\hpm_sdk_localized_for_hpm5300evk\soc\HPM5300\HPM5361\hpm_ses_reg.xml"
+    debug_restrict_memory_access="No"
+    gdb_server_write_timeout="300"
+    link_symbol_definitions="_heap_size=0x2000;_stack_size=0x2000;_flash_size=1M" />
+  <configuration
+    Connection="USB"
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="None"
+    gdb_server_allow_memory_access_during_execution="Yes"
+    gdb_server_ignore_checksum_errors="No"
+    gdb_server_register_access="General and Individual" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 1" />
+  <project Name="hpm_monitor_demo - hpm5300evk">
+    <configuration
+      LIBRARY_IO_TYPE="STD"
+      Name="Common"
+      RISCV_TOOLCHAIN_VARIANT="Andes"
+      arm_linker_heap_size="0x4000"
+      arm_linker_no_warn_on_mismatch="Yes"
+      arm_linker_stack_size="0x4000"
+      arm_linker_variant="GNU"
+      arm_rtl_variant="SEGGER"
+      build_generic_options_file_name="$(StudioDir)/targets/Andes_build_options.xml"
+      build_output_file_name="$(OutDir)/demo$(EXE)"
+      c_additional_options="-Wall;-Wundef;-Wno-format;-fomit-frame-pointer;-fno-builtin;-ffunction-sections;-fdata-sections;-g;-mcpu=d25;-mext-dsp"
+      c_user_include_directories="../../hpm_sdk_localized_for_hpm5300evk/arch;../../hpm_sdk_localized_for_hpm5300evk/boards/hpm5300evk;../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361;../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/ip;../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/toolchains;../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/boot;../../hpm_sdk_localized_for_hpm5300evk/drivers/inc;../../hpm_sdk_localized_for_hpm5300evk/utils;../../hpm_sdk_localized_for_hpm5300evk/components/debug_console;../../hpm_sdk_localized_for_hpm5300evk/components/spi;../../hpm_sdk_localized_for_hpm5300evk/components/dma_mgr;../../hpm_sdk_localized_for_hpm5300evk/components/usb/device;../../hpm_sdk_localized_for_hpm5300evk/middleware/hpm_math;../../hpm_sdk_localized_for_hpm5300evk/middleware/hpm_math/nds_dsp;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/common;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/osal;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/core;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/cdc;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/hid;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/midi;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/msc;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/audio;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/video;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/hub;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/wireless;../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/port/ehci;../build_tmp/generated/include;../../inc;../../inc/config;../../../../../components/enet_phy;../../../../../middleware/hpm_monitor/core;../../../../../middleware/hpm_monitor/port/hpm;../../../../../middleware/hpm_monitor/port/hpm/barebone_usb"
+      debug_target_connection="GDB Server"
+      gcc_all_warnings_command_line_options="-Wall;-Wextra;-Wno-format"
+      gcc_cplusplus_language_standard="c++11"
+      gcc_enable_all_warnings="Yes"
+      gdb_server_autostart_server="Yes"
+      gdb_server_command_line="C:/Users/26355/Downloads/sdk_env-1.5.0/tools/openocd/openocd.exe -f $(ProjectDir)/../../hpm_sdk_localized_for_hpm5300evk/boards/openocd/probes/ft2232.cfg -f $(ProjectDir)/../../hpm_sdk_localized_for_hpm5300evk/boards/openocd/soc/hpm5300.cfg -f $(ProjectDir)/../../hpm_sdk_localized_for_hpm5300evk/boards/openocd/boards/hpm5300evk.cfg"
+      gdb_server_port="3333"
+      gdb_server_reset_command="reset halt"
+      gdb_server_type="Custom"
+      heap_size="4096"
+      libcxx="Yes (No Exceptions)"
+      link_linker_script_file="..\..\hpm_sdk_localized_for_hpm5300evk\soc\HPM5300\HPM5361\toolchains\gcc\flash_xip.ld"
+      link_symbol_definitions="__SEGGER_RTL_vfprintf=__SEGGER_RTL_vfprintf_short_float_long;__SEGGER_RTL_vfscanf=__SEGGER_RTL_vfscanf_int;"
+      link_use_linker_script_file="Yes"
+      linker_additional_files="..\..\hpm_sdk_localized_for_hpm5300evk\middleware\hpm_math\nds_dsp\gcc\libdspf.a"
+      linker_output_format="bin"
+      linker_printf_fmt_level="int"
+      linker_printf_fp_enabled="Float"
+      linker_printf_wchar_enabled="No"
+      linker_printf_width_precision_supported="Yes"
+      linker_scanf_character_group_matching_enabled="No"
+      linker_scanf_fmt_level="int"
+      linker_scanf_fp_enabled="No"
+      post_build_command="&quot;$(OBJDUMP)&quot; -S -d &quot;$(OutDir)/demo$(EXE)&quot; &gt; &quot;$(OutDir)/demo.asm&quot;"
+      project_directory=""
+      project_type="Executable"
+      rv32andes_compiler_ext_dsp="Yes"
+      rv_abi="ilp32f"
+      rv_arch_ext="_p_xv5"
+      rv_arch_zicsr="No"
+      rv_arch_zifencei="No"
+      rv_architecture="rv32imafc"
+      rv_debug_extensions="Andes"
+      rv_toolchain_prefix="andes-"
+      stack_size="4096"
+      target_device_name="HPM5361xCBx" />
+    <configuration
+      Connection="USB"
+      Name="Debug"
+      RISCV_TOOLCHAIN_VARIANT="Andes"
+      arm_assembler_variant="gcc"
+      arm_compiler_variant="gcc"
+      arm_linker_no_warn_on_mismatch="Yes"
+      build_generic_options_file_name="$(StudioDir)/targets/Andes_build_options.xml"
+      c_include_files=""
+      c_user_include_directories="../../src/utils;../../src/utils/core;../../src/utils/port/hpm;../../src/utils/port/hpm/barebone_usb;../../src/user;../../src/user/bsp;../../src/user/fsm;../../src/user/fsm/Chassis"
+      debug_target_connection="GDB Server"
+      gcc_c_language_standard="c11"
+      gcc_debugging_level="Level 2"
+      gcc_optimization_level="Level 1"
+      gdb_server_allow_memory_access_during_execution="Yes"
+      gdb_server_autostart_server="Yes"
+      gdb_server_command_line="C:/Users/26355/Downloads/sdk_env-1.5.0/tools/openocd/openocd.exe -f C:/Users/26355/Downloads/sdk_env-1.5.0/hpm_sdk/boards/openocd/probes/cmsis_dap.cfg -f C:/Users/26355/Downloads/sdk_env-1.5.0/hpm_sdk/boards/openocd/soc/hpm5300.cfg -f C:/Users/26355/Downloads/sdk_env-1.5.0/hpm_sdk/boards/openocd/boards/hpm5300evk.cfg"
+      gdb_server_ignore_checksum_errors="No"
+      gdb_server_port="3333"
+      gdb_server_register_access="General and Individual"
+      gdb_server_reset_command="reset halt"
+      gdb_server_type="OpenOCD"
+      link_time_optimization="No"
+      rv_abi="ilp32d"
+      rv_arch_ext="_xv5"
+      rv_arch_zba="No"
+      rv_arch_zicsr="No"
+      rv_arch_zifencei="No"
+      rv_architecture="rv32gc"
+      rv_debug_extensions="Andes"
+      rv_toolchain_prefix="andes-"
+      use_compiler_driver="No" />
+    <folder Name="application">
+      <folder Name="src">
+        <configuration
+          Name="Common"
+          build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/application/src" />
+        <folder Name="BSP">
+          <file file_name="../../src/user/bsp/bsp_eeprom.c" />
+          <file file_name="../../src/user/bsp/bsp_i2c.c" />
+          <file file_name="../../src/user/bsp/bsp_io.c" />
+          <file file_name="../../src/user/bsp/bsp_LED.c" />
+          <file file_name="../../src/user/bsp/bsp_mcan.c" />
+          <file file_name="../../src/user/bsp/bsp_pwm.c" />
+          <file file_name="../../src/user/bsp/bsp_spi.c" />
+          <file file_name="../../src/user/bsp/bsp_uart.c" />
+          <file file_name="../../src/user/bsp/bsp_usb.c" />
+        </folder>
+        <folder Name="ENTITY">
+          <file file_name="../../src/user/BoardMemory.cpp" />
+          <file file_name="../../src/user/BoardMemoryPacket.cpp" />
+          <file file_name="../../src/user/CANManager.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/CL57.cpp" />
+          <file file_name="../../src/user/crc.cpp" />
+          <file file_name="../../src/user/DJIMotorCANManager.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/Emm_V5.c" />
+          <file file_name="../../src/user/Entity.cpp" />
+          <file file_name="../../src/user/GM6020.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/GM6020SensorHandler.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/ISR.cpp" />
+          <file file_name="../../src/user/M2006.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/M2006SensorHandler.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/M3508.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/M3508SensorHandler.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="../../src/user/Math.cpp" />
+          <file file_name="../../src/user/PID.cpp" />
+          <file file_name="../../src/user/RobotEngine.cpp" />
+          <file file_name="../../src/user/TDP6260.cpp" />
+          <file file_name="../../src/user/USBPort.cpp" />
+          <file file_name="../../src/user/ZBLDMotor.cpp">
+            <configuration Name="Debug" build_exclude_from_build="No" />
+          </file>
+          <file file_name="../../src/user/ZMotor.cpp" />
+        </folder>
+        <folder Name="FSM">
+          <file file_name="../../src/user/fsm/Chassis/ChassisController.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisState2AxisMove.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateCMD.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateInit.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateWait.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateXAxisMove.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateXAxisMoveCheck.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateYawAxisMove.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateYawAxisMoveCheck.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateYAxisMove.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateYAxisMoveCheck.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateZAxisMove.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateZAxisMoveCheck.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateZero.cpp" />
+        </folder>
+        <file file_name="../../src/user/main.cpp" />
+      </folder>
+    </folder>
+    <folder Name="boards">
+      <folder Name="hpm5300evk">
+        <configuration
+          Name="Common"
+          build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/boards/hpm5300evk" />
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/boards/hpm5300evk/board.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/board.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/boards/hpm5300evk/pinmux.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/pinmux.c$(OBJ)" />
+        </file>
+      </folder>
+    </folder>
+    <folder Name="components">
+      <folder Name="debug_console">
+        <configuration
+          Name="Common"
+          build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/components/debug_console" />
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/components/debug_console/hpm_debug_console.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_debug_console.c$(OBJ)" />
+        </file>
+      </folder>
+      <folder Name="other">
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/components/spi/hpm_spi.c" />
+      </folder>
+      <folder Name="usb">
+        <folder Name="device">
+          <configuration
+            Name="Common"
+            build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/components/usb/device" />
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/components/usb/device/hpm_usb_device.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/hpm_usb_device.c$(OBJ)" />
+          </file>
+        </folder>
+      </folder>
+    </folder>
+    <folder Name="drivers">
+      <folder Name="src">
+        <configuration
+          Name="Common"
+          build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/drivers/src" />
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_acmp_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_acmp_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_adc16_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_adc16_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_crc_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_crc_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_dac_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_dac_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_dmav2_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_dmav2_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_enc_pos_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_enc_pos_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_ewdg_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_ewdg_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_gpio_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_gpio_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_gptmr_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_gptmr_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_i2c_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_i2c_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_mcan_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_mcan_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_mchtmr_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_mchtmr_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_mmc_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_mmc_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_opamp_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_opamp_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_pcfg_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_pcfg_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_plb_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_plb_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_pllctlv2_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_pllctlv2_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_pmp_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_pmp_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_ptpc_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_ptpc_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_pwm_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_pwm_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_qeiv2_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_qeiv2_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_qeo_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_qeo_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_rdc_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_rdc_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_rng_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_rng_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_sdp_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_sdp_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_sei_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_sei_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_spi_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_spi_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_tsns_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_tsns_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_uart_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_uart_drv.c$(OBJ)" />
+        </file>
+        <file file_name="../../hpm_sdk_localized_for_hpm5300evk/drivers/src/hpm_usb_drv.c">
+          <configuration
+            Name="Common"
+            build_object_file_name="$(IntDir)/hpm_usb_drv.c$(OBJ)" />
+        </file>
+      </folder>
+    </folder>
+    <folder Name="middleware">
+      <folder Name="cherryusb">
+        <folder Name="class">
+          <folder Name="cdc">
+            <configuration
+              Name="Common"
+              build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/middleware/cherryusb/class/cdc" />
+            <file file_name="../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/class/cdc/usbd_cdc_acm.c">
+              <configuration
+                Name="Common"
+                build_object_file_name="$(IntDir)/usbd_cdc_acm.c$(OBJ)" />
+            </file>
+          </folder>
+        </folder>
+        <folder Name="core">
+          <configuration
+            Name="Common"
+            build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/middleware/cherryusb/core" />
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/core/usbd_core.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/usbd_core.c$(OBJ)" />
+          </file>
+        </folder>
+        <folder Name="port">
+          <folder Name="hpm">
+            <configuration
+              Name="Common"
+              build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/middleware/cherryusb/port/hpm" />
+            <file file_name="../../hpm_sdk_localized_for_hpm5300evk/middleware/cherryusb/port/hpm/usb_dc_hpm.c">
+              <configuration
+                Name="Common"
+                build_object_file_name="$(IntDir)/usb_dc_hpm.c$(OBJ)" />
+            </file>
+          </folder>
+        </folder>
+      </folder>
+      <folder Name="hpm_math">
+        <folder Name="sw_dsp">
+          <configuration
+            Name="Common"
+            build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/middleware/hpm_math/sw_dsp" />
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/middleware/hpm_math/sw_dsp/hpm_math_sw.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/hpm_math_sw.c$(OBJ)" />
+          </file>
+        </folder>
+      </folder>
+    </folder>
+    <folder Name="soc">
+      <folder Name="HPM5300">
+        <folder Name="HPM5361">
+          <configuration
+            Name="Common"
+            build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/soc/HPM5300/HPM5361" />
+          <folder Name="boot">
+            <configuration
+              Name="Common"
+              build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/soc/HPM5300/HPM5361/boot" />
+            <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/boot/hpm_bootheader.c">
+              <configuration
+                Name="Common"
+                build_object_file_name="$(IntDir)/hpm_bootheader.c$(OBJ)" />
+            </file>
+          </folder>
+          <folder Name="toolchains">
+            <configuration
+              Name="Common"
+              build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/soc/HPM5300/HPM5361/toolchains" />
+            <folder Name="gcc">
+              <configuration
+                Name="Common"
+                build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/soc/HPM5300/HPM5361/toolchains/gcc" />
+              <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/toolchains/gcc/initfini.c">
+                <configuration
+                  Name="Common"
+                  build_object_file_name="$(IntDir)/initfini.c$(OBJ)" />
+              </file>
+              <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/toolchains/gcc/start.S">
+                <configuration
+                  Name="Common"
+                  build_object_file_name="$(IntDir)/start.S$(OBJ)" />
+              </file>
+            </folder>
+            <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/toolchains/reset.c">
+              <configuration
+                Name="Common"
+                build_object_file_name="$(IntDir)/reset.c$(OBJ)" />
+            </file>
+            <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/toolchains/trap.c">
+              <configuration
+                Name="Common"
+                build_object_file_name="$(IntDir)/trap.c$(OBJ)" />
+            </file>
+          </folder>
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/hpm_clock_drv.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/hpm_clock_drv.c$(OBJ)" />
+          </file>
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/hpm_l1c_drv.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/hpm_l1c_drv.c$(OBJ)" />
+          </file>
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/hpm_otp_drv.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/hpm_otp_drv.c$(OBJ)" />
+          </file>
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/hpm_sysctl_drv.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/hpm_sysctl_drv.c$(OBJ)" />
+          </file>
+          <file file_name="../../hpm_sdk_localized_for_hpm5300evk/soc/HPM5300/HPM5361/system.c">
+            <configuration
+              Name="Common"
+              build_object_file_name="$(IntDir)/system.c$(OBJ)" />
+          </file>
+        </folder>
+      </folder>
+    </folder>
+    <folder Name="utils">
+      <configuration
+        Name="Common"
+        build_intermediate_directory="Output/$(Configuration)/Obj/$(ProjectName)/utils" />
+      <file file_name="../../hpm_sdk_localized_for_hpm5300evk/utils/hpm_crc32.c">
+        <configuration
+          Name="Common"
+          build_object_file_name="$(IntDir)/hpm_crc32.c$(OBJ)" />
+      </file>
+      <file file_name="../../hpm_sdk_localized_for_hpm5300evk/utils/hpm_ffssi.c">
+        <configuration
+          Name="Common"
+          build_object_file_name="$(IntDir)/hpm_ffssi.c$(OBJ)" />
+      </file>
+      <file file_name="../../hpm_sdk_localized_for_hpm5300evk/utils/hpm_swap.c">
+        <configuration
+          Name="Common"
+          build_object_file_name="$(IntDir)/hpm_swap.c$(OBJ)" />
+      </file>
+      <file file_name="../../src/utils/port/hpm/barebone_usb/monitor.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="../../src/utils/core/monitor_profile.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="../../src/utils/core/monitor_task.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="../../src/utils/port/hpm/monitor_ticktime.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+  </project>
+</solution>
