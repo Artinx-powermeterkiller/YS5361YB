@@ -18,6 +18,22 @@ void bsp_uart3_init(void);
 void bsp_uart5_init(void);
 void bsp_uart7_init(void);
 
+void bsp_set_uart0_buffer(uint8_t* _buffer);
+void bsp_set_uart0_buffer_index(uint8_t* _buffer_index);
+void bsp_set_uart0_idle_flag(uint8_t* _flag);
+
+void bsp_set_uart1_buffer(uint8_t* _buffer);
+void bsp_set_uart1_buffer_index(uint8_t* _buffer_index);
+void bsp_set_uart1_idle_flag(uint8_t* _flag);
+
+void bsp_set_uart3_buffer(uint8_t* _buffer);
+void bsp_set_uart3_buffer_index(uint8_t* _buffer_index);
+void bsp_set_uart3_idle_flag(uint8_t* _flag);
+
+void bsp_set_uart5_buffer(uint8_t* _buffer);
+void bsp_set_uart5_buffer_index(uint8_t* _buffer_index);
+void bsp_set_uart5_idle_flag(uint8_t* _flag);
+
 void bsp_set_uart7_buffer(uint8_t* _buffer);
 void bsp_set_uart7_buffer_index(uint8_t* _buffer_index);
 void bsp_set_uart7_idle_flag(uint8_t* _flag);

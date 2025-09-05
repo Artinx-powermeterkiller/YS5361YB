@@ -69,8 +69,12 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../src/user/bsp/bsp_eeprom.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="72" useTextEdit="1" path="../../src/user/main.cpp" left="0" top="56" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="311" useTextEdit="1" path="../../src/user/USBPort.cpp" left="0" selected="1" top="292" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="19" y="72" useTextEdit="1" path="../../src/user/main.cpp" left="0" top="55" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="311" useTextEdit="1" path="../../src/user/USBPort.cpp" left="0" top="292" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="19" useTextEdit="1" path="../../src/user/RS485Device.hpp" left="0" selected="1" top="5" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="17" useTextEdit="1" path="../../src/user/FWAY.cpp" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../src/user/bsp/bsp_mcan.c" left="0" top="193" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1" useTextEdit="1" path="../../src/user/RS485Device.cpp" left="0" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="hpm_monitor_demo - hpm5300evk" fileDialogDefaultFilter="*" autoConnectTarget="GDB Server" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="E:/RM25/YS5361QG/src/user/fsm/Chassis" debugSearchPath="" autoConnectCapabilities="1343"/>
 </session>

@@ -1,5 +1,5 @@
 #include "ChassisStateInit.hpp"
-#include "ChassisStateZero.hpp"
+//#include "ChassisStateZero.hpp"
 
 void ChassisStateInit::Init(ChassisController* pOwner)
 {
@@ -19,7 +19,7 @@ void ChassisStateInit::Execute(ChassisController* pOwner)
     }
     else
     {
-        pOwner->chassisFsm.ChangeState(ChassisStateZero::Instance());
+        //pOwner->chassisFsm.ChangeState(ChassisStateZero::Instance());
     }
 }
 

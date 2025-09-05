@@ -3,10 +3,7 @@
 #include "hpm_gpiom_drv.h"
 #include "Math.hpp"
 #include "ChassisStateInit.hpp"
-#include "ChassisStateZero.hpp"
 #include "ChassisStateWait.hpp"
-#include "ChassisStateXAxisMove.hpp"
-#include "ChassisStateXAxisMoveCheck.hpp"
 
 ChassisController::ChassisController() : ControllerEntity(ECT_ChassisController), chassisFsm(this)
 {
@@ -23,8 +20,7 @@ void ChassisController::Init()
     m_set_up_x_speed = m_set_y_speed = 1.0f;
 
     cl57_manager.Init();
-    tdp6260_manager.Init();
-    z_manager.Init();
+    thts_manager.Init();
 
     usb_port = USBPort::Instance();
 
@@ -40,14 +36,13 @@ float debug_delta_speed = 0.05f;
 void ChassisController::Update()
 {
     cl57_manager.RxUpdate();
-    z_manager.RxUpdate();
+    thts_manager.ReceiceUpdate();
     
     chassisFsm.HandleInput();
     chassisFsm.Update();
 
+    thts_manager.SendUpdate();
     cl57_manager.Update();
-    z_manager.Update();
-    tdp6260_manager.Update();
 
     test_chassis_count++;
 }
@@ -59,9 +54,6 @@ void ChassisFsm::HandleInput()
 void ChassisFsm::Init()
 {
     ChassisStateInit::Instance()->Init(m_pOwner);
-    ChassisStateZero::Instance()->Init(m_pOwner);
-    ChassisStateXAxisMove::Instance()->Init(m_pOwner);
-    ChassisStateXAxisMoveCheck::Instance()->Init(m_pOwner);
 
     SetCurrentState(ChassisStateInit::Instance());
 }

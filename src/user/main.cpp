@@ -62,6 +62,9 @@ int main(void)
     //bsp_i2c_init();
     //bsp_spi_init();
     bsp_uart0_init();
+    bsp_uart1_init();
+    bsp_uart3_init();
+    bsp_uart5_init();
     bsp_uart7_init();
     //bsp_mcan0_init();
     //bsp_mcan1_init();

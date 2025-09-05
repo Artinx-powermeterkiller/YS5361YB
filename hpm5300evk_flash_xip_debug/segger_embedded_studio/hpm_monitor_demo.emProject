@@ -17,6 +17,7 @@
     gdb_server_allow_memory_access_during_execution="Yes"
     gdb_server_ignore_checksum_errors="No"
     gdb_server_register_access="General and Individual" />
+  <configuration Name="Debug1" />
   <configuration
     Name="Release"
     c_preprocessor_definitions="NDEBUG"
@@ -122,62 +123,28 @@
           <file file_name="../../src/user/bsp/bsp_usb.c" />
         </folder>
         <folder Name="ENTITY">
-          <file file_name="../../src/user/BoardMemory.cpp" />
-          <file file_name="../../src/user/BoardMemoryPacket.cpp" />
           <file file_name="../../src/user/CANManager.cpp">
             <configuration Name="Debug" build_exclude_from_build="Yes" />
           </file>
           <file file_name="../../src/user/CL57.cpp" />
           <file file_name="../../src/user/crc.cpp" />
-          <file file_name="../../src/user/DJIMotorCANManager.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
-          <file file_name="../../src/user/Emm_V5.c" />
           <file file_name="../../src/user/Entity.cpp" />
-          <file file_name="../../src/user/GM6020.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
-          <file file_name="../../src/user/GM6020SensorHandler.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
+          <file file_name="../../src/user/FWAY.cpp" />
           <file file_name="../../src/user/ISR.cpp" />
-          <file file_name="../../src/user/M2006.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
-          <file file_name="../../src/user/M2006SensorHandler.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
-          <file file_name="../../src/user/M3508.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
-          <file file_name="../../src/user/M3508SensorHandler.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
           <file file_name="../../src/user/Math.cpp" />
           <file file_name="../../src/user/PID.cpp" />
           <file file_name="../../src/user/RobotEngine.cpp" />
-          <file file_name="../../src/user/TDP6260.cpp" />
+          <file file_name="../../src/user/THTS.cpp" />
           <file file_name="../../src/user/USBPort.cpp" />
           <file file_name="../../src/user/ZBLDMotor.cpp">
             <configuration Name="Debug" build_exclude_from_build="No" />
           </file>
-          <file file_name="../../src/user/ZMotor.cpp" />
         </folder>
         <folder Name="FSM">
           <file file_name="../../src/user/fsm/Chassis/ChassisController.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisState2AxisMove.cpp" />
           <file file_name="../../src/user/fsm/Chassis/ChassisStateCMD.cpp" />
           <file file_name="../../src/user/fsm/Chassis/ChassisStateInit.cpp" />
           <file file_name="../../src/user/fsm/Chassis/ChassisStateWait.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateXAxisMove.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateXAxisMoveCheck.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateYawAxisMove.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateYawAxisMoveCheck.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateYAxisMove.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateYAxisMoveCheck.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateZAxisMove.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateZAxisMoveCheck.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateZero.cpp" />
         </folder>
         <file file_name="../../src/user/main.cpp" />
       </folder>
