@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <array>
+#include <algorithm>
 
 class RS485Device
 {
@@ -22,8 +23,19 @@ template <class T, std::size_t N>
 class RS485DeviceManager
 {
 private:
+    uint32_t m_tick;
+    uint32_t m_interval;
+    typename std::array<T, N>::iterator m_iterator;
+    typename std::array<T, N>::iterator m_iterator_end;
+
 public:
-    RS485DeviceManager() {}
+    RS485DeviceManager(uint32_t _interval)
+    {
+        m_iterator = device_vector.begin();
+        m_iterator_end = device_vector.end();
+        m_tick = 0;
+        m_interval = _interval;
+    }
     ~RS485DeviceManager() {}
 
     std::array<T, N> device_vector;
@@ -32,15 +44,71 @@ public:
     uint8_t rx_update_flag;
     uint8_t rx_length;
 
-    virtual void Init() = 0;
+    virtual void Init()
+    {
+        int i = 1;
+        for (auto it = device_vector.begin(); it != device_vector.end(); ++it, ++i)
+        {
+            (*it).m_address = i;
+        }
+
+        BspInit();
+
+        rx_update_flag = 0;
+        rx_length = 0;
+    }
+
+    virtual void BspInit() = 0;
+
     virtual void SendUpdate()
     {
-        for (auto it = device_vector.begin(); it != device_vector.end(); ++it)
+        m_tick++;
+
+        if (m_tick % m_interval == 0)
         {
-            (*it).Read(0);
+            if (m_iterator != m_iterator_end)
+            {
+                (*m_iterator).Read(0);
+                m_iterator++;
+            }
+            else
+            {
+                m_iterator = device_vector.begin();
+                (*m_iterator).Read(0);
+                m_iterator++;
+            }
         }
     }
-    virtual void ReceiceUpdate() = 0;
+
+    virtual void ReceiceUpdate()
+    {
+        uint8_t head = 0;
+        uint8_t temp_length = 0;
+        uint8_t address = 0xFF;
+
+        if (rx_update_flag == 1)
+        {
+            while (head < rx_length)
+            {
+                address = rx_buffer[head];
+
+                auto it = std::find_if(device_vector.begin(), device_vector.end(), [address](const T &a)
+                                  { return a.m_address == address; });
+
+                if (it != device_vector.end())
+                {
+                    temp_length = it->ReadReceive(&rx_buffer[head]);
+                    head += temp_length;
+                }
+                else
+                {
+                    head++;
+                }
+            }
+            rx_update_flag = 0;
+            rx_length -= head;
+        }
+    }
 };
 
 #endif

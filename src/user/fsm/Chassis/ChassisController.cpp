@@ -21,6 +21,7 @@ void ChassisController::Init()
 
     cl57_manager.Init();
     thts_manager.Init();
+    fyaw_manager.Init();
 
     usb_port = USBPort::Instance();
 
@@ -37,12 +38,14 @@ void ChassisController::Update()
 {
     cl57_manager.RxUpdate();
     thts_manager.ReceiceUpdate();
+    fyaw_manager.ReceiceUpdate();
     
     chassisFsm.HandleInput();
     chassisFsm.Update();
 
     thts_manager.SendUpdate();
     cl57_manager.Update();
+    fyaw_manager.SendUpdate();
 
     test_chassis_count++;
 }

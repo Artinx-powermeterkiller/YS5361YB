@@ -23,12 +23,10 @@ class FYAWManager : public RS485DeviceManager<FYAW,4>
 private:
 
 public:
-    FYAWManager() {}
+    FYAWManager();
     ~FYAWManager() {}
 
-    void Init() override;
-    void SendUpdate() override;
-    void ReceiceUpdate() override;
+    void BspInit() override;
 };
 
 #endif
