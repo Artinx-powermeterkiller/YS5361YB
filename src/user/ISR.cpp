@@ -1,4 +1,4 @@
-#include "CANManager.hpp"
+//#include "CANManager.hpp"
 #include "hpm_mcan_drv.h"
 
 SDK_DECLARE_EXT_ISR_M(IRQn_MCAN0, mcan0_isr);

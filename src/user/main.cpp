@@ -54,8 +54,8 @@ int main(void)
     board_init_usb_pins();
 
     bsp_LED_init();
-    bsp_input_gpio_init();
-    bsp_output_gpio_init();
+    //bsp_input_gpio_init();
+    //bsp_output_gpio_init();
 
     //bsp_set_pwm_freq(1000.0f);//1KHz
     //bsp_pwm_init();

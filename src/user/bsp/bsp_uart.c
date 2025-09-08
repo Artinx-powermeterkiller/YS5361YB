@@ -144,7 +144,7 @@ void bsp_uart1_init()
     uart_config_t config = {0};
     uart_default_config(HPM_UART1, &config);
 
-    config.baudrate = 115200;
+    config.baudrate = 9600;
     config.num_of_stop_bits = stop_bits_1;
     config.word_length = word_length_8_bits;
     config.parity = parity_none;
@@ -227,7 +227,7 @@ void bsp_uart3_init()
     uart_config_t config = {0};
     uart_default_config(HPM_UART3, &config);
 
-    config.baudrate = 115200;
+    config.baudrate = 9600;
     config.num_of_stop_bits = stop_bits_1;
     config.word_length = word_length_8_bits;
     config.parity = parity_none;
@@ -310,7 +310,7 @@ void bsp_uart5_init()
     uart_config_t config = {0};
     uart_default_config(HPM_UART5, &config);
 
-    config.baudrate = 115200;
+    config.baudrate = 9600;
     config.num_of_stop_bits = stop_bits_1;
     config.word_length = word_length_8_bits;
     config.parity = parity_none;
@@ -394,7 +394,7 @@ void bsp_uart7_init()
     uart_config_t config = {0};
     uart_default_config(HPM_UART7, &config);
 
-    config.baudrate = 115200;
+    config.baudrate = 9600;
     config.num_of_stop_bits = stop_bits_1;
     config.word_length = word_length_8_bits;
     config.parity = parity_none;

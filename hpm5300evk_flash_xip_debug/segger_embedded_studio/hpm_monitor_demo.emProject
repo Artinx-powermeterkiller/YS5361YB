@@ -142,7 +142,9 @@
         </folder>
         <folder Name="FSM">
           <file file_name="../../src/user/fsm/Chassis/ChassisController.cpp" />
-          <file file_name="../../src/user/fsm/Chassis/ChassisStateCMD.cpp" />
+          <file file_name="../../src/user/fsm/Chassis/ChassisStateCMD.cpp">
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
           <file file_name="../../src/user/fsm/Chassis/ChassisStateInit.cpp" />
           <file file_name="../../src/user/fsm/Chassis/ChassisStateWait.cpp" />
         </folder>

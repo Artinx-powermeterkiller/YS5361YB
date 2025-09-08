@@ -19,8 +19,8 @@ void ChassisController::Init()
 
     m_set_up_x_speed = m_set_y_speed = 1.0f;
 
-    cl57_manager.Init();
-    thts_manager.Init();
+    //cl57_manager.Init();
+    //thts_manager.Init();
     fyaw_manager.Init();
 
     usb_port = USBPort::Instance();
@@ -36,15 +36,15 @@ float debug_delta_speed = 0.05f;
 
 void ChassisController::Update()
 {
-    cl57_manager.RxUpdate();
-    thts_manager.ReceiceUpdate();
+    //cl57_manager.RxUpdate();
+    //thts_manager.ReceiceUpdate();
     fyaw_manager.ReceiceUpdate();
     
     chassisFsm.HandleInput();
     chassisFsm.Update();
 
-    thts_manager.SendUpdate();
-    cl57_manager.Update();
+    //thts_manager.SendUpdate();
+    //cl57_manager.Update();
     fyaw_manager.SendUpdate();
 
     test_chassis_count++;

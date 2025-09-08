@@ -19,6 +19,10 @@ void FYAW::Read(uint8_t _cmd)
     Append_CRC16_Check_Sum(m_send_buffer, 8);
 
     uart_tx_trigger_dma(HPM_HDMA, 5, HPM_UART0, (uint32_t)m_send_buffer, 8);
+    uart_tx_trigger_dma(HPM_HDMA, 6, HPM_UART1, (uint32_t)m_send_buffer, 8);
+    uart_tx_trigger_dma(HPM_HDMA, 7, HPM_UART3, (uint32_t)m_send_buffer, 8);
+    uart_tx_trigger_dma(HPM_HDMA, 8, HPM_UART5, (uint32_t)m_send_buffer, 8);
+    uart_tx_trigger_dma(HPM_HDMA, 3, HPM_UART7, (uint32_t)m_send_buffer, 8);
 }
 
 uint8_t FYAW::ReadReceive(uint8_t *_buffer)
@@ -33,7 +37,7 @@ uint8_t FYAW::ReadReceive(uint8_t *_buffer)
 
     for (uint8_t i = 0; i < 4; i++)
     {
-        read_union.i8[3-i] = _buffer[2+i];
+        read_union.i8[3-i] = _buffer[3+i];
     }
 
     m_gap = read_union.f32;
@@ -48,7 +52,7 @@ FYAWManager::FYAWManager():RS485DeviceManager(500)
 
 void FYAWManager::BspInit()
 {
-    bsp_set_uart0_buffer(rx_buffer);
-    bsp_set_uart0_buffer_index(&rx_length);
-    bsp_set_uart0_idle_flag(&rx_update_flag);
+    bsp_set_uart3_buffer(rx_buffer);
+    bsp_set_uart3_buffer_index(&rx_length);
+    bsp_set_uart3_idle_flag(&rx_update_flag);
 }
