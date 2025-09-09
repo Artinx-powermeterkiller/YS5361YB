@@ -7,7 +7,7 @@ FYAW::FYAW() : RS485Device(0)
 }
 
 
-void FYAW::Read(uint8_t _cmd)
+void FYAW::Read(RS485Command*  _cmd)
 {
     m_send_buffer[0] = m_address;
     m_send_buffer[1] = 0x04;
@@ -19,10 +19,6 @@ void FYAW::Read(uint8_t _cmd)
     Append_CRC16_Check_Sum(m_send_buffer, 8);
 
     uart_tx_trigger_dma(HPM_HDMA, 5, HPM_UART0, (uint32_t)m_send_buffer, 8);
-    uart_tx_trigger_dma(HPM_HDMA, 6, HPM_UART1, (uint32_t)m_send_buffer, 8);
-    uart_tx_trigger_dma(HPM_HDMA, 7, HPM_UART3, (uint32_t)m_send_buffer, 8);
-    uart_tx_trigger_dma(HPM_HDMA, 8, HPM_UART5, (uint32_t)m_send_buffer, 8);
-    uart_tx_trigger_dma(HPM_HDMA, 3, HPM_UART7, (uint32_t)m_send_buffer, 8);
 }
 
 uint8_t FYAW::ReadReceive(uint8_t *_buffer)

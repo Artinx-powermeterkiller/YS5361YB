@@ -15,6 +15,14 @@
         "emm_v5.h": "c",
         "hpm_mcan_drv.h": "c",
         "usbd_cdc_acm.h": "c",
-        "usb_cdc.h": "c"
-    }
+        "usb_cdc.h": "c",
+        "array": "cpp",
+        "algorithm": "cpp",
+        "bit": "cpp",
+        "__config": "cpp"
+    },
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.compilerPath": "",
+    "cmake.sourceDirectory": "E:/RM25/YS5361YB/hpm_sdk_localized_for_hpm5300evk",
+    "C_Cpp.errorSquiggles": "disabled",
 }

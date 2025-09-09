@@ -11,8 +11,7 @@ public:
     FYAW();
     ~FYAW(){}
 
-    void ReadGap();
-    void Read(uint8_t _cmd) override;
+    void Read(RS485Command*  _cmd) override;
     uint8_t ReadReceive(uint8_t *_buffer) override;
 
     float m_gap; // mm

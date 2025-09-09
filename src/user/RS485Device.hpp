@@ -5,6 +5,21 @@
 #include <array>
 #include <algorithm>
 
+enum RS485CommandType : uint8_t
+{
+    RS485WriteCommand = 0,
+    RS485ReadCommand= 1,
+};
+
+struct RS485Command
+{
+    uint8_t address;
+    uint8_t command;
+    uint8_t command_type;
+    uint16_t parameter;
+    uint16_t parameter_optional;
+};
+
 class RS485Device
 {
 private:
@@ -12,7 +27,8 @@ public:
     RS485Device(uint8_t _address) : m_address(_address) {}
     ~RS485Device() {}
 
-    virtual void Read(uint8_t _cmd) {}
+    virtual void Read(RS485Command*  _cmd) {}
+    virtual void Write(RS485Command* _cmd) {}
     virtual uint8_t ReadReceive(uint8_t *_buffer) = 0;
 
     uint8_t m_address;
@@ -27,6 +43,9 @@ private:
     uint32_t m_interval;
     typename std::array<T, N>::iterator m_iterator;
     typename std::array<T, N>::iterator m_iterator_end;
+    RS485Command m_write_command_vector[8];
+    uint8_t m_command_num;
+    uint8_t m_finished_command_num;
 
 public:
     RS485DeviceManager(uint32_t _interval)
@@ -35,6 +54,7 @@ public:
         m_iterator_end = device_vector.end();
         m_tick = 0;
         m_interval = _interval;
+        m_command_num = 0;
     }
     ~RS485DeviceManager() {}
 
@@ -66,15 +86,40 @@ public:
 
         if (m_tick % m_interval == 0)
         {
+            if (m_command_num>m_finished_command_num)
+            {
+                uint8_t address = m_write_command_vector[m_finished_command_num].address;
+
+                auto it = std::find_if(device_vector.begin(), device_vector.end(), [address](const T &a)
+                                  { return a.m_address == address; });
+
+                if (it != device_vector.end())
+                {
+                    if(m_write_command_vector[m_finished_command_num].command_type == RS485WriteCommand)
+                    {
+                        it->Write(&m_write_command_vector[m_finished_command_num]);
+                    }
+                    else if(m_write_command_vector[m_finished_command_num].command_type == RS485ReadCommand)
+                    {
+                        it->Read(&m_write_command_vector[m_finished_command_num]);
+                    }
+                }
+                
+                m_finished_command_num++;
+
+                return;
+            }
+            
+            // todo
             if (m_iterator != m_iterator_end)
             {
-                (*m_iterator).Read(0);
+                m_iterator->Read(nullptr);
                 m_iterator++;
             }
             else
             {
                 m_iterator = device_vector.begin();
-                (*m_iterator).Read(0);
+                m_iterator->Read(nullptr);
                 m_iterator++;
             }
         }

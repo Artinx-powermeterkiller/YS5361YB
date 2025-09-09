@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "RISC-V",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/user/bsp",
+                "${workspaceFolder}/src/user",
+                "${workspaceFolder}/src/user/fsm",
+                "C:/Program Files/SEGGER/SEGGER Embedded Studio for RISC-V 7.32a/include",
+                "C:/Program Files/SEGGER/SEGGER Embedded Studio for RISC-V 7.32a/source/libcxx/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "C:/gcc/andes-riscv32-none-elf/bin/cc1plus.exe"
+        }
+    ],
+    "version": 4
+}

@@ -128,6 +128,7 @@
           </file>
           <file file_name="../../src/user/CL57.cpp" />
           <file file_name="../../src/user/crc.cpp" />
+          <file file_name="../../src/user/CX4SY.cpp" />
           <file file_name="../../src/user/Entity.cpp" />
           <file file_name="../../src/user/FWAY.cpp" />
           <file file_name="../../src/user/ISR.cpp" />
