@@ -19,7 +19,8 @@
         "array": "cpp",
         "algorithm": "cpp",
         "bit": "cpp",
-        "__config": "cpp"
+        "__config": "cpp",
+        "memory": "cpp"
     },
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.default.compilerPath": "",

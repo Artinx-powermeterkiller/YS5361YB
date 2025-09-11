@@ -123,18 +123,16 @@
           <file file_name="../../src/user/bsp/bsp_usb.c" />
         </folder>
         <folder Name="ENTITY">
-          <file file_name="../../src/user/CANManager.cpp">
-            <configuration Name="Debug" build_exclude_from_build="Yes" />
-          </file>
           <file file_name="../../src/user/CL57.cpp" />
           <file file_name="../../src/user/crc.cpp" />
           <file file_name="../../src/user/CX4SY.cpp" />
           <file file_name="../../src/user/Entity.cpp" />
-          <file file_name="../../src/user/FWAY.cpp" />
+          <file file_name="../../src/user/FYAW.cpp" />
           <file file_name="../../src/user/ISR.cpp" />
           <file file_name="../../src/user/Math.cpp" />
           <file file_name="../../src/user/PID.cpp" />
           <file file_name="../../src/user/RobotEngine.cpp" />
+          <file file_name="../../src/user/SBT90.cpp" />
           <file file_name="../../src/user/THTS.cpp" />
           <file file_name="../../src/user/USBPort.cpp" />
           <file file_name="../../src/user/ZBLDMotor.cpp">

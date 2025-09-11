@@ -13,18 +13,78 @@ void CX4SYManager::BspInit()
     bsp_set_uart5_idle_flag(&rx_update_flag);
 }
 
-void CX4SYManager::SetChannel(uint8_t _channel, uint8_t _channel_set)
+void CX4SYManager::SetChannel(uint8_t _address, uint8_t _channel, uint8_t _channel_set)
 {
-    //m_channel_set[_channel] = _channel_set; 
+    auto it = std::find_if(device_vector.begin(), device_vector.end(), [_address](const CX4SY &a)
+                           { return a.m_address == _address; });
+
+    RS485Command cmd;
+
+    if (it != device_vector.end())
+    {
+        cmd.address = _address;
+        cmd.command = CX4SYCommand::WriteChannelSet;
+        cmd.command_type = RS485WriteCommand;
+        cmd.parameter = _channel;
+        cmd.parameter_optional = _channel_set;
+
+        AddCommand(&cmd);
+    }
 }
 
-void CX4SYManager::SetAllChannelStart()
+void CX4SYManager::SetAllChannelStart(uint8_t _address)
 {
-    
+    auto it = std::find_if(device_vector.begin(), device_vector.end(), [_address](const CX4SY &a)
+                           { return a.m_address == _address; });
+
+    RS485Command cmd;
+
+    if (it != device_vector.end())
+    {
+        cmd.address = _address;
+        cmd.command = CX4SYCommand::StartAllChannel;
+        cmd.command_type = RS485WriteCommand;
+
+        AddCommand(&cmd);
+    }
 }
 
-void CX4SYManager::SetTemperature(uint8_t _channel, float _temperature)
+void CX4SYManager::SetTemperature(uint8_t _address, uint8_t _channel, float _temperature)
 {
+    auto it = std::find_if(device_vector.begin(), device_vector.end(), [_address](const CX4SY &a)
+                           { return a.m_address == _address; });
+
+    RS485Command cmd;
+    uint16_t temp_temperature = _temperature * 10.0f;
+
+    if (it != device_vector.end())
+    {
+        cmd.address = _address;
+        cmd.command = CX4SYCommand::WriteTemperature;
+        cmd.command_type = RS485WriteCommand;
+        cmd.parameter = _channel;
+        cmd.parameter_optional = temp_temperature;
+
+        AddCommand(&cmd);
+    }
+}
+
+void CX4SYManager::ReadTemperature(uint8_t _address, uint8_t _channel)
+{
+    auto it = std::find_if(device_vector.begin(), device_vector.end(), [_address](const CX4SY &a)
+                           { return a.m_address == _address; });
+
+    RS485Command cmd;
+
+    if (it != device_vector.end())
+    {
+        cmd.address = _address;
+        cmd.command = CX4SYCommand::ReadTemperature;
+        cmd.command_type = RS485ReadCommand;
+        cmd.parameter = _channel;
+
+        AddCommand(&cmd);
+    }
 }
 
 CX4SY::CX4SY() : RS485Device(0)

@@ -41,14 +41,10 @@ class RS485DeviceManager
 private:
     uint32_t m_tick;
     uint32_t m_interval;
-    // typename std::array<T, N>::iterator m_iterator;
-    // typename std::array<T, N>::iterator m_iterator_end;
 
 public:
     RS485DeviceManager(uint32_t _interval)
     {
-        //m_iterator = device_vector.begin();
-        //m_iterator_end = device_vector.end();
         m_tick = 0;
         m_interval = _interval;
         m_command_num = 0;
@@ -64,6 +60,20 @@ public:
     RS485Command m_write_command_vector[8];
     uint8_t m_command_num;
     uint8_t m_finished_command_num;
+
+    uint8_t AddCommand()
+    {
+        if(m_command_num<8)
+        {
+            m_write_command_vector[m_command_num].command_type = RS485ReadCommand;
+            m_command_num++;
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
     uint8_t AddCommand(RS485Command* _cmd)
     {
@@ -133,19 +143,6 @@ public:
 
                 return;
             }
-
-            // todo
-            // if (m_iterator != m_iterator_end)
-            // {
-            //     m_iterator->Read(nullptr);
-            //     m_iterator++;
-            // }
-            // else
-            // {
-            //     m_iterator = device_vector.begin();
-            //     m_iterator->Read(nullptr);
-            //     m_iterator++;
-            // }
         }
     }
 

@@ -14,6 +14,8 @@
 #include "../../USBPort.hpp"
 #include "../../THTS.hpp"
 #include "../../FYAW.hpp"
+#include "../../CX4SY.hpp"
+#include "../../SBT90.hpp"
 
 // Forward declaration
 class ChassisController;
@@ -35,28 +37,12 @@ public:
     ChassisFsm chassisFsm;
 
     CL57MotorManager cl57_manager;
-    FYAWManager fyaw_manager;
     THTSManager thts_manager;
+    CX4SYManager cx4sy_manager;
+    FYAWManager fyaw_manager;
+    SBT90Manager sbt90_manager;
     USBPort* usb_port;
     
-    float m_set_up_x_pos; // mm
-    float m_set_y_pos; // mm
-    float m_set_yaw_pos; // degree
-    float m_set_down_x_pos;
-    float m_set_z2_pos;//mm
-
-    float m_set_up_x_speed; //mm/s
-    float m_set_yaw_speed; // deg/s
-    float m_set_y_speed; //mm/s
-    float m_set_xy_speed;//mm/s
-    float m_set_z2_speed; //mm/s
-
-    float m_last_up_x_pos;
-    float m_last_y_pos;
-    float m_last_yaw_pos;
-    float m_last_down_x_pos;
-    float m_last_z2_pos;
-
     ChassisController();
 
     virtual void Init();

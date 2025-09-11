@@ -1,5 +1,5 @@
 #ifndef CX4SY_HPP
-#define FYAW_HPP
+#define CX4SY_HPP
 
 #include <stdint.h>
 #include "RS485Device.hpp"
