@@ -2,7 +2,7 @@
 #include "crc.hpp"
 #include "bsp_uart.h"
 
-THTSManager::THTSManager():RS485DeviceManager(500)
+THTSManager::THTSManager():RS485DeviceManager(200)
 {
 }
 
@@ -43,16 +43,16 @@ uint8_t THTS::ReadReceive(uint8_t *_buffer)
 
     for (uint8_t i = 0; i < 16; i++)
     {
-        read_union.i8[0] = _buffer[3+i*2];
-        read_union.i8[1] = _buffer[4+i*2];
+        read_union.i8[1] = _buffer[3+i*2];
+        read_union.i8[0] = _buffer[4+i*2];
 
         m_temperature[i] = (float)read_union.i16 * 0.1f;
     }
 
     for (uint8_t i = 16; i < 20; i++)
     {
-        read_union.i8[0] = _buffer[3+i*2];
-        read_union.i8[1] = _buffer[4+i*2];
+        read_union.i8[1] = _buffer[3+i*2];
+        read_union.i8[0] = _buffer[4+i*2];
 
         m_gap[i-16] = (float)read_union.i16 * 0.1f;
     }

@@ -61,10 +61,11 @@ public:
     uint8_t m_command_num;
     uint8_t m_finished_command_num;
 
-    uint8_t AddCommand()
+    uint8_t AddCommand(uint8_t _address)
     {
         if(m_command_num<8)
         {
+            m_write_command_vector[m_command_num].address = _address;
             m_write_command_vector[m_command_num].command_type = RS485ReadCommand;
             m_command_num++;
             return 1;
@@ -172,7 +173,7 @@ public:
                 }
             }
             rx_update_flag = 0;
-            rx_length -= head;
+            //rx_length -= head;
         }
     }
 };

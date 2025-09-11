@@ -24,13 +24,12 @@ void ChassisController::Init()
     chassisFsm.Init();
 }
 
-uint32_t chassis_count = 0;
+uint32_t fyaw_count = 0;
 bool set_flag = false;
 
 void ChassisController::Update()
 {
-    chassis_count++;
-
+    
     fyaw_manager.ReceiceUpdate();
     cx4sy_manager.ReceiceUpdate();
     sbt90_manager.ReceiceUpdate();
@@ -41,22 +40,23 @@ void ChassisController::Update()
 
     if(fyaw_manager.m_command_num == 0)
     {
-        fyaw_manager.AddCommand();
+        fyaw_manager.AddCommand((fyaw_count%4)+1);
+        fyaw_count++;
     }
 
     if(cx4sy_manager.m_command_num == 0)
     {  
-        cx4sy_manager.ReadTemperature(1,(uint8_t)((CX4SYChannel1 + chassis_count)%4));
+        cx4sy_manager.ReadTemperature(10,CX4SYChannel1);
     }
 
     if(sbt90_manager.m_command_num == 0)
     {
-        sbt90_manager.AddCommand();
+        sbt90_manager.AddCommand(1);
     }
 
     if(thts_manager.m_command_num == 0)
     {
-        thts_manager.AddCommand();
+        thts_manager.AddCommand(1);
     }
 
     fyaw_manager.SendUpdate();

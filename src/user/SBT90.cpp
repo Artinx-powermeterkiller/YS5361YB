@@ -2,7 +2,7 @@
 #include "crc.hpp"
 #include "bsp_uart.h"
 
-SBT90Manager::SBT90Manager() : RS485DeviceManager(500)
+SBT90Manager::SBT90Manager() : RS485DeviceManager(100)
 {
 }
 
@@ -45,9 +45,9 @@ uint8_t SBT90::ReadReceive(uint8_t *_buffer)
     {
         for (uint8_t j = 0; j < 4; j++)
         {
-            read_union.i8[j] = _buffer[3 + j + 4 * i];
+            read_union.i8[3-j] = _buffer[3 + j + 4 * i];
         }
-        force[i] = read_union.u32;
+        force[i] = read_union.u32 *0.01f;
     }
 
     return 21;

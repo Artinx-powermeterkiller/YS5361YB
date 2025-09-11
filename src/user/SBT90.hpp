@@ -11,7 +11,7 @@ public:
     SBT90();
     ~SBT90(){}
 
-    uint32_t force[4];
+    float force[4];
 
     void Read(RS485Command*  _cmd) override;
     uint8_t ReadReceive(uint8_t *_buffer) override;

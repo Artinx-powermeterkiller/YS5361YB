@@ -2,7 +2,7 @@
 #include "crc.hpp"
 #include "bsp_uart.h"
 
-CX4SYManager::CX4SYManager() : RS485DeviceManager(500)
+CX4SYManager::CX4SYManager() : RS485DeviceManager(1000)
 {
 }
 
@@ -11,6 +11,8 @@ void CX4SYManager::BspInit()
     bsp_set_uart5_buffer(rx_buffer);
     bsp_set_uart5_buffer_index(&rx_length);
     bsp_set_uart5_idle_flag(&rx_update_flag);
+
+    device_vector[0].m_address = 10;
 }
 
 void CX4SYManager::SetChannel(uint8_t _address, uint8_t _channel, uint8_t _channel_set)
@@ -132,16 +134,16 @@ void CX4SY::ReadTemperature(uint8_t channel)
 
     switch (channel)
     {
-    case 1:
+    case 0:
         start_address = 0x4848;
         break;
-    case 2:
+    case 1:
         start_address = 0x4888;
         break;
-    case 3:
+    case 2:
         start_address = 0x48C8;
         break;
-    case 4:
+    case 3:
         start_address = 0x4908;
         break;
     default:
