@@ -48,6 +48,8 @@ void CX4SYManager::SetAllChannelStart(uint8_t _address)
         cmd.command_type = RS485WriteCommand;
 
         AddCommand(&cmd);
+
+        it->m_last_write_read_channel = 0xFF;
     }
 }
 
@@ -68,6 +70,8 @@ void CX4SYManager::SetTemperature(uint8_t _address, uint8_t _channel, float _tem
         cmd.parameter_optional = temp_temperature;
 
         AddCommand(&cmd);
+
+        it->m_last_write_read_channel = _channel;
     }
 }
 
@@ -86,6 +90,8 @@ void CX4SYManager::ReadTemperature(uint8_t _address, uint8_t _channel)
         cmd.parameter = _channel;
 
         AddCommand(&cmd);
+
+        it->m_last_write_read_channel = _channel;
     }
 }
 
@@ -108,7 +114,46 @@ void CX4SY::Read(RS485Command *_cmd)
 
 uint8_t CX4SY::ReadReceive(uint8_t *_buffer)
 {
+    if (m_last_write_read_channel == 0xFF)
+    {
+        return 8;
+    }
+    
+    switch (_buffer[1])
+    {
+    case 0x03:
+        TemperatureReceive(_buffer);
+        return 9;
+    default:
+        return 8;
+    }
 }
+
+void CX4SY::TemperatureReceive(uint8_t *_buffer)
+{
+    union CX4SYReadUnion
+    {
+        int8_t i8[2];
+        int16_t i6;
+    };
+
+    CX4SYReadUnion read_union;
+
+    for (uint8_t i = 0; i < 2; i++)
+    {
+        read_union.i8[2-i] = _buffer[3+i];
+    }
+
+    m_temperature_fdb[m_last_write_read_channel] = read_union.i6*0.1f;
+
+    for (uint8_t i = 0; i < 2; i++)
+    {
+        read_union.i8[2-i] = _buffer[5+i];
+    }
+
+    m_temperature_set[m_last_write_read_channel] = read_union.i6*0.1f;
+}
+
 
 void CX4SY::Write(RS485Command *_cmd)
 {

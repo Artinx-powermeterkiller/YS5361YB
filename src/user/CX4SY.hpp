@@ -28,6 +28,7 @@ private:
     void WriteChannelSet(uint8_t channel, uint16_t channel_set);
     void StartAllChannel();
 
+    void TemperatureReceive(uint8_t *_buffer);
 public:
     CX4SY();
     ~CX4SY() {}
@@ -39,6 +40,8 @@ public:
     float m_temperature_set[4];
     float m_temperature_fdb[4];
     uint8_t m_channel_set[4];
+
+    uint8_t m_last_write_read_channel;
 };
 
 class CX4SYManager : public RS485DeviceManager<CX4SY, 1>
