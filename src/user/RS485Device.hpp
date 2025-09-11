@@ -173,7 +173,7 @@ public:
                 }
             }
             rx_update_flag = 0;
-            //rx_length -= head;
+            rx_length -= head;
         }
     }
 };

@@ -2,7 +2,7 @@
 #include "crc.hpp"
 #include "bsp_uart.h"
 
-CX4SYManager::CX4SYManager() : RS485DeviceManager(1000)
+CX4SYManager::CX4SYManager() : RS485DeviceManager(200)
 {
 }
 
@@ -141,14 +141,14 @@ void CX4SY::TemperatureReceive(uint8_t *_buffer)
 
     for (uint8_t i = 0; i < 2; i++)
     {
-        read_union.i8[2-i] = _buffer[3+i];
+        read_union.i8[1-i] = _buffer[3+i];
     }
 
     m_temperature_fdb[m_last_write_read_channel] = read_union.i6*0.1f;
 
     for (uint8_t i = 0; i < 2; i++)
     {
-        read_union.i8[2-i] = _buffer[5+i];
+        read_union.i8[1-i] = _buffer[5+i];
     }
 
     m_temperature_set[m_last_write_read_channel] = read_union.i6*0.1f;
