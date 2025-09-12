@@ -57,9 +57,11 @@ public:
     uint8_t rx_update_flag;
     uint8_t rx_length;
 
-    RS485Command m_write_command_vector[8];
+    RS485Command m_write_command_vector[16];
     uint8_t m_command_num;
     uint8_t m_finished_command_num;
+
+    void SetTick(uint32_t _tick){m_tick = _tick;}
 
     uint8_t AddCommand(uint8_t _address)
     {

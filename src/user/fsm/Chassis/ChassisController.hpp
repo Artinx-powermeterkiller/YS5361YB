@@ -1,7 +1,6 @@
 #ifndef CHASSISCONTROLLER_HPP
 #define CHASSISCONTROLLER_HPP
 
-#define FLT_EPSILON 1.192e-07F
 #include <math.h>
 #include "../../RobotEngine.hpp"
 #include "../StateMachine.hpp"
@@ -9,13 +8,14 @@
 //#include "../../BoardMemory.hpp"
 //#include "../../math_first_order_filter.h"
 //#include "../../ZBLDMotor.hpp"
-#include "../../CL57.hpp"
+// #include "../../CL57.hpp"
 #include "../../bsp/bsp_io.h"
 #include "../../USBPort.hpp"
 #include "../../THTS.hpp"
 #include "../../FYAW.hpp"
 #include "../../CX4SY.hpp"
 #include "../../SBT90.hpp"
+#include "../../CL120.hpp"
 
 // Forward declaration
 class ChassisController;
@@ -36,7 +36,10 @@ private:
 public:
     ChassisFsm chassisFsm;
 
-    CL57MotorManager cl57_manager;
+    // CL57MotorManager cl57_manager;
+
+    CL57Manager cl57_manager;
+    CL120Manager cl120_manager;
     THTSManager thts_manager;
     CX4SYManager cx4sy_manager;
     FYAWManager fyaw_manager;

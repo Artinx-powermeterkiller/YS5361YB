@@ -14,6 +14,8 @@ void ChassisController::Init()
 {
     SetDefaultTicksToUpdate(1);
 
+    cl120_manager.Init();
+    cl57_manager.Init();
     fyaw_manager.Init();
     cx4sy_manager.Init();
     thts_manager.Init();
@@ -24,21 +26,23 @@ void ChassisController::Init()
     chassisFsm.Init();
 }
 
+uint32_t motor_count = 0;
 uint32_t fyaw_count = 0;
 uint32_t cx4sy_count = 0;
+
 bool set_flag = false;
 
 void ChassisController::Update()
 {
-    
     fyaw_manager.ReceiceUpdate();
     cx4sy_manager.ReceiceUpdate();
     sbt90_manager.ReceiceUpdate();
     thts_manager.ReceiceUpdate();
-    
+    cl57_manager.ReceiceUpdate();
+
     if(set_flag == true)
     {
-        cx4sy_manager.SetAllChannelStart(10);
+        cl120_manager.SetSpeed(0x05,1234);
         set_flag = false;
     }
 
@@ -71,6 +75,8 @@ void ChassisController::Update()
     cx4sy_manager.SendUpdate();
     sbt90_manager.SendUpdate();
     thts_manager.SendUpdate();
+    cl57_manager.SendUpdate();
+    cl120_manager.SendUpdate();
 }
 
 void ChassisFsm::HandleInput()
