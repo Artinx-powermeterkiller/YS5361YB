@@ -29,6 +29,7 @@ void ChassisController::Init()
 uint32_t motor_count = 0;
 uint32_t fyaw_count = 0;
 uint32_t cx4sy_count = 0;
+uint32_t debug_count = 0;
 
 bool set_flag = false;
 
@@ -40,11 +41,24 @@ void ChassisController::Update()
     thts_manager.ReceiceUpdate();
     cl57_manager.ReceiceUpdate();
 
-    if(set_flag == true)
+    if(cl57_manager.m_command_num == 0)
     {
-        cl120_manager.SetSpeed(0x05,1234);
-        set_flag = false;
+        cl57_manager.SetSpeed(0x01,100);
+        cl57_manager.SetSpeed(0x02,100);
+        cl57_manager.SetSpeed(0x03,100);
+        cl57_manager.SetSpeed(0x04,100);
     }
+
+    //if(set_flag == true)
+    //{
+    //    cl120_manager.SetSpeed(0x05,100);
+    //    cl120_manager.SetSpeed(0x06,200);
+    //    cl120_manager.SetSpeed(0x07,300);
+    //    cl120_manager.SetSpeed(0x08,400);
+    //    cl120_manager.SetSpeed(0x09,500);
+    //    cl120_manager.SetSpeed(0x0A,600);
+    //    set_flag = false;
+    //}
 
     chassisFsm.HandleInput();
     chassisFsm.Update();

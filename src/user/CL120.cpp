@@ -222,6 +222,12 @@ void CL120Manager::BspInit()
     bsp_set_uart0_buffer(rx_buffer);
     bsp_set_uart0_buffer_index(&rx_length);
     bsp_set_uart0_idle_flag(&rx_update_flag);
+
+    for (uint8_t i = 0; i < 6; i++)
+    {
+        device_vector[i].m_address = 0x05+i;
+    }
+    
 }
 
 void CL120Manager::SetSpeed(uint8_t _address, float _speed)
